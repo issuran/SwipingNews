@@ -9,14 +9,17 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    var navigationController: UINavigationController
+    var window: UIWindow
+    var navigationController = UINavigationController()
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    required init(window: UIWindow) {
+        self.window = window
+        window.rootViewController = navigationController
+        self.window.makeKeyAndVisible()
     }
     
     func start() {
-        let vc = SwipingNewsViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        navigationController.pushViewController(vc, animated: true)
+        let vc = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController.setViewControllers([vc], animated: true)
     }
 }

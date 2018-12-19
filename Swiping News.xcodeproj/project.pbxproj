@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288076C21C6962300FC4D75 /* AppDelegate.swift */; };
-		5288076F21C6962300FC4D75 /* SwipingNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288076E21C6962300FC4D75 /* SwipingNewsViewController.swift */; };
 		5288077421C6962400FC4D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5288077321C6962400FC4D75 /* Assets.xcassets */; };
 		5288077721C6962400FC4D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5288077521C6962400FC4D75 /* LaunchScreen.storyboard */; };
 		52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D9AB21C9C50700A2F99C /* CoordinatorProtocol.swift */; };
 		52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D9AD21C9C54A00A2F99C /* AppCoordinator.swift */; };
-		52B9D9B121C9C7D500A2F99C /* SwipingNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B9D9B021C9C7D500A2F99C /* SwipingNewsViewController.xib */; };
+		BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */; };
+		BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5288076921C6962300FC4D75 /* Swiping News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiping News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5288076C21C6962300FC4D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5288076E21C6962300FC4D75 /* SwipingNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsViewController.swift; sourceTree = "<group>"; };
 		5288077321C6962400FC4D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5288077621C6962400FC4D75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5288077821C6962400FC4D75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B9D9AB21C9C50700A2F99C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		52B9D9AD21C9C54A00A2F99C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		52B9D9B021C9C7D500A2F99C /* SwipingNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsViewController.xib; sourceTree = "<group>"; };
+		BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewController.swift; sourceTree = "<group>"; };
+		BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsCollectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		5288076B21C6962300FC4D75 /* Swiping News */ = {
 			isa = PBXGroup;
 			children = (
-				52B9D9AF21C9C7A500A2F99C /* View */,
+				BB74256421CA7D1E00FDA47C /* News */,
 				52B9D9AA21C9C4EB00A2F99C /* Coordinator */,
 				5288076C21C6962300FC4D75 /* AppDelegate.swift */,
 				5288077321C6962400FC4D75 /* Assets.xcassets */,
@@ -80,10 +80,18 @@
 		52B9D9AF21C9C7A500A2F99C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5288076E21C6962300FC4D75 /* SwipingNewsViewController.swift */,
-				52B9D9B021C9C7D500A2F99C /* SwipingNewsViewController.xib */,
+				BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */,
+				BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BB74256421CA7D1E00FDA47C /* News */ = {
+			isa = PBXGroup;
+			children = (
+				52B9D9AF21C9C7A500A2F99C /* View */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5288077721C6962400FC4D75 /* LaunchScreen.storyboard in Resources */,
+				BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */,
 				5288077421C6962400FC4D75 /* Assets.xcassets in Resources */,
-				52B9D9B121C9C7D500A2F99C /* SwipingNewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */,
-				5288076F21C6962300FC4D75 /* SwipingNewsViewController.swift in Sources */,
 				5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */,
 				52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */,
+				BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
