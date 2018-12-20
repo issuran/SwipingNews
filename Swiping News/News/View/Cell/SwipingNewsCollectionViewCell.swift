@@ -9,10 +9,21 @@
 import UIKit
 
 class SwipingNewsCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var newsHeadlineLabel: UILabel!
+    @IBOutlet weak var newsBriefLabel: UILabel!    
+    @IBOutlet weak var newsContentView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    public func configure(with model: SwipingNewsModel) {
+        newsImageView.image = model.newsImage
+        newsHeadlineLabel.text = model.newsHeadline
+        newsBriefLabel.text = model.newsBrief
+    }
 }
