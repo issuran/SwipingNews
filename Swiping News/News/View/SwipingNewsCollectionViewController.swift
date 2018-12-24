@@ -123,7 +123,13 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
             return
         }
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions(), animations: ({
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1,
+            options: UIView.AnimationOptions(),
+            animations: ({
             
             self.addBackButton()
             
