@@ -57,10 +57,18 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     
     @objc func backAction() -> Void {
         let indexPath = collectionView.indexPathsForSelectedItems!
-        collectionView.isScrollEnabled = true
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.hidesBackButton = true
-        collectionView.reloadItems(at: indexPath)
+        UIView.animate(
+            withDuration: 0.7,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1,
+            options: UIView.AnimationOptions(),
+            animations: ({
+                self.collectionView.isScrollEnabled = true
+                self.navigationItem.leftBarButtonItem = nil
+                self.navigationItem.hidesBackButton = true
+                self.collectionView.reloadItems(at: indexPath)
+            }), completion: nil)
     }
 
     // MARK: UICollectionViewDataSource
@@ -124,8 +132,8 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
         }
         
         UIView.animate(
-            withDuration: 0.5,
-            delay: 0,
+            withDuration: 0.65,
+            delay: 0.1,
             usingSpringWithDamping: 1,
             initialSpringVelocity: 1,
             options: UIView.AnimationOptions(),
