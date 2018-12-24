@@ -139,25 +139,27 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
             options: UIView.AnimationOptions(),
             animations: ({
             
-            self.addBackButton()
-            
-            let rect = CGRect(
-                x: 0,
-                y: self.collectionView.contentOffset.y + navigationBarHeight,
-                width: self.collectionView.bounds.width,
-                height: self.view.bounds.height - navigationBarHeight
-            )
-            
-            cell.frame = rect
-            cell.layer.shadowColor = UIColor.white.cgColor
-            
-            cell.trailingConstraint.constant = 0
-            cell.leadingConstraint.constant = 0
-            
-            collectionView.isScrollEnabled = false
-            
+                self.addBackButton()
+                cell.newsBriefTextView.isScrollEnabled = false
+                
+                let rect = CGRect(
+                    x: 0,
+                    y: self.collectionView.contentOffset.y + navigationBarHeight,
+                    width: self.collectionView.bounds.width,
+                    height: self.view.bounds.height - navigationBarHeight
+                )
+                
+                cell.frame = rect
+                cell.layer.shadowColor = UIColor.white.cgColor
+                
+                cell.trailingConstraint.constant = 0
+                cell.leadingConstraint.constant = 0
+                
+                collectionView.isScrollEnabled = false
+                
         }), completion: nil)
         
         cell.newsBriefTextView.textContainer.maximumNumberOfLines = 0
+        cell.newsBriefTextView.isScrollEnabled = true
     }
 }
