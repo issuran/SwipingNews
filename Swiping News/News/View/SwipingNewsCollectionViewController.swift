@@ -12,6 +12,30 @@ private let reuseIdentifier = "swipingNewsCell"
 
 class SwipingNewsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    let imageArray = [
+        "mega",
+        "dragonball",
+        "bleach",
+        "naruto",
+        "octo"
+    ]
+    
+    let textArray = [
+        "MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!",
+        "Dragon ball follows Goku on his journey alongside Bulma to find the Dragon Ball which can fulfil their wish to bring back to life Goku's grandfather.",
+        "Bleach tells a story about Ichigo which is a shinigami.",
+        "Naruto is a ninja not usual trying to become the next Hokage. In his journey he wants to be acknowledge by the others in his Village.",
+        "Octopath Traveler is a game based on medieval eras, where you follow 8 travelers, 8 stories, throughout a world full of magic and incredible things."
+    ]
+    
+    let headlineArray = [
+        "Mega Man X",
+        "Dragon Ball",
+        "Bleach",
+        "Naruto",
+        "Octopath Traveler"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,16 +71,20 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return imageArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SwipingNewsCollectionViewCell
     
         // Configure the cell
-        cell.newsImageView.image = #imageLiteral(resourceName: "mega")
-        cell.newsHeadlineLabel.text = "Hello World"
-        cell.newsBriefLabel.text = "It is a beautiful day to code, isn't it?"
+        cell.newsImageView.image = #imageLiteral(resourceName: imageArray[indexPath.row])
+        cell.newsHeadlineLabel.text = headlineArray[indexPath.row]
+        cell.newsBriefLabel.text = textArray[indexPath.row]
+        
+        cell.newsBriefLabel.numberOfLines = 2
+        cell.trailingConstraint.constant = 10
+        cell.leadingConstraint.constant = 10
         
         //This creates the shadows and modifies the cards a little bit
         cell.newsContentView.layer.cornerRadius = 5.0
@@ -78,6 +106,10 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 230)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
     // MARK: UICollectionViewDelegate
@@ -105,13 +137,13 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
             cell.frame = rect
             cell.layer.shadowColor = UIColor.white.cgColor
             
+            cell.trailingConstraint.constant = 0
+            cell.leadingConstraint.constant = 0
+            
             collectionView.isScrollEnabled = false
             
         }), completion: nil)
         
         cell.newsBriefLabel.numberOfLines = 0
-        
-        cell.newsBriefLabel.text = "It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?It is a beautiful day to code, isn't it2?"
     }
-    
 }

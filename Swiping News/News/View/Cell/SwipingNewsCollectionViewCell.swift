@@ -16,6 +16,11 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var newsContentView: UIView!
     
     
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
