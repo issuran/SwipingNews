@@ -13,6 +13,8 @@
 		52A1A8A021CB0328000AE632 /* SwipingNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */; };
 		52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D9AB21C9C50700A2F99C /* CoordinatorProtocol.swift */; };
 		52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D9AD21C9C54A00A2F99C /* AppCoordinator.swift */; };
+		52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */; };
+		52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */; };
 		BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */; };
 		BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */; };
 		BB74257121CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256F21CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift */; };
@@ -28,6 +30,8 @@
 		52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsModel.swift; sourceTree = "<group>"; };
 		52B9D9AB21C9C50700A2F99C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		52B9D9AD21C9C54A00A2F99C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewController.swift; sourceTree = "<group>"; };
 		BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsCollectionViewController.xib; sourceTree = "<group>"; };
 		BB74256F21CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		5288076B21C6962300FC4D75 /* Swiping News */ = {
 			isa = PBXGroup;
 			children = (
+				52F7872421D58482001D0438 /* NewsDetails */,
 				BB74256421CA7D1E00FDA47C /* News */,
 				52B9D9AA21C9C4EB00A2F99C /* Coordinator */,
 				5288076C21C6962300FC4D75 /* AppDelegate.swift */,
@@ -99,6 +104,31 @@
 				BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52F7872421D58482001D0438 /* NewsDetails */ = {
+			isa = PBXGroup;
+			children = (
+				52F7872621D586AF001D0438 /* Model */,
+				52F7872521D586A4001D0438 /* View */,
+			);
+			path = NewsDetails;
+			sourceTree = "<group>";
+		};
+		52F7872521D586A4001D0438 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */,
+				52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52F7872621D586AF001D0438 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BB74256421CA7D1E00FDA47C /* News */ = {
@@ -178,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5288077721C6962400FC4D75 /* LaunchScreen.storyboard in Resources */,
+				52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */,
 				BB74257221CAB32400FDA47C /* SwipingNewsCollectionViewCell.xib in Resources */,
 				BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */,
 				5288077421C6962400FC4D75 /* Assets.xcassets in Resources */,
@@ -194,6 +225,7 @@
 				52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */,
 				5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */,
 				52A1A8A021CB0328000AE632 /* SwipingNewsModel.swift in Sources */,
+				52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */,
 				52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */,
 				BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */,
 				BB74257121CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift in Sources */,

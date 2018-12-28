@@ -13,7 +13,7 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var newsHeadlineLabel: UILabel!    
     @IBOutlet weak var newsContentView: UIView!
-    @IBOutlet weak var newsBriefTextView: UITextView!
+    @IBOutlet weak var newsBriefLabel: UILabel!
     
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
@@ -27,6 +27,6 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
     public func configure(with model: SwipingNewsModel) {
         newsImageView.image = model.newsImage
         newsHeadlineLabel.text = model.newsHeadline
-        newsBriefTextView.text = model.newsBrief
+        newsBriefLabel.text = model.newsBrief
     }
 }

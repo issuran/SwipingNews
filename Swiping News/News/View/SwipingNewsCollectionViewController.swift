@@ -88,9 +88,9 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
         // Configure the cell
         cell.newsImageView.image = #imageLiteral(resourceName: imageArray[indexPath.row])
         cell.newsHeadlineLabel.text = headlineArray[indexPath.row]
-        cell.newsBriefTextView.text = textArray[indexPath.row]
+        cell.newsBriefLabel.text = textArray[indexPath.row]
         
-        cell.newsBriefTextView.textContainer.maximumNumberOfLines = 2
+        cell.newsBriefLabel.numberOfLines = 3
         cell.trailingConstraint.constant = 10
         cell.leadingConstraint.constant = 10
         
@@ -113,7 +113,7 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     // MARK: UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 230)
+        return CGSize(width: view.frame.width, height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -131,6 +131,8 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
             return
         }
         
+        cell.newsBriefLabel.numberOfLines = 0
+        
         UIView.animate(
             withDuration: 0.65,
             delay: 0.1,
@@ -140,7 +142,6 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
             animations: ({
             
                 self.addBackButton()
-                cell.newsBriefTextView.isScrollEnabled = false
                 
                 let rect = CGRect(
                     x: 0,
@@ -159,7 +160,5 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
                 
         }), completion: nil)
         
-        cell.newsBriefTextView.textContainer.maximumNumberOfLines = 0
-        cell.newsBriefTextView.isScrollEnabled = true
     }
 }
