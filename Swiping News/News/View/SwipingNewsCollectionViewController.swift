@@ -12,6 +12,8 @@ private let reuseIdentifier = "swipingNewsCell"
 
 class SwipingNewsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var viewModel: SwipingNewsViewModel!
+    
     let imageArray = [
         "mega",
         "dragonball",
@@ -35,6 +37,10 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
         "Naruto",
         "Octopath Traveler"
     ]
+    
+    func start(viewModel: SwipingNewsViewModel) {
+        self.viewModel = viewModel
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,42 +129,14 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! SwipingNewsCollectionViewCell
         
-        cell.superview?.bringSubviewToFront(cell)
+        let model = SwipingNewsModel(
+            newsImage: #imageLiteral(resourceName: imageArray[indexPath.row]),
+            newsHeadline: headlineArray[indexPath.row],
+            newsBrief: textArray[indexPath.row]
+        )
         
-        guard let navigationBarHeight = navigationController?.navigationBar.bounds.height else {
-            return
-        }
-        
-        cell.newsBriefLabel.numberOfLines = 0
-        
-        UIView.animate(
-            withDuration: 0.65,
-            delay: 0.1,
-            usingSpringWithDamping: 1,
-            initialSpringVelocity: 1,
-            options: UIView.AnimationOptions(),
-            animations: ({
-            
-                self.addBackButton()
-                
-                let rect = CGRect(
-                    x: 0,
-                    y: self.collectionView.contentOffset.y + navigationBarHeight,
-                    width: self.collectionView.bounds.width,
-                    height: self.view.bounds.height - navigationBarHeight
-                )
-                
-                cell.frame = rect
-                cell.layer.shadowColor = UIColor.white.cgColor
-                
-                cell.trailingConstraint.constant = 0
-                cell.leadingConstraint.constant = 0
-                
-                collectionView.isScrollEnabled = false
-                
-        }), completion: nil)
+        self.viewModel.callNewsDetail(model: model)
         
     }
 }

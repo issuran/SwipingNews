@@ -12,6 +12,12 @@ class AppCoordinator: Coordinator {
     var window: UIWindow
     var navigationController = UINavigationController()
     
+    var newsDetailViewController: NewsDetailViewController!
+    var newsDetailViewModel: NewsDetailViewModel!
+    
+    var swipingNewsCollectionViewController: SwipingNewsCollectionViewController!
+    var swipingNewsViewModel: SwipingNewsViewModel!
+    
     required init(window: UIWindow) {
         self.window = window
         window.rootViewController = navigationController
@@ -19,7 +25,17 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        navigationController.setViewControllers([vc], animated: true)
+        swipingNewsCollectionViewController = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        swipingNewsViewModel = SwipingNewsViewModel(coordinator: self)
+        swipingNewsCollectionViewController.start(viewModel: swipingNewsViewModel)
+        navigationController.setViewControllers([swipingNewsCollectionViewController], animated: true)
+    }
+}
+
+extension AppCoordinator: NewsDetailDelegate {
+    func callNewsDetail(model: SwipingNewsModel) {
+        newsDetailViewModel = NewsDetailViewModel(model: model, coordinator: self)
+        newsDetailViewController = NewsDetailViewController(viewModel: newsDetailViewModel)
+        navigationController.pushViewController(newsDetailViewController, animated: true)
     }
 }

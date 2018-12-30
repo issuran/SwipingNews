@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5275AEA721D92C0100174216 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275AEA621D92C0100174216 /* NewsDetailViewModel.swift */; };
+		5275AEAA21D92CB500174216 /* SwipingNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275AEA921D92CB500174216 /* SwipingNewsViewModel.swift */; };
 		5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288076C21C6962300FC4D75 /* AppDelegate.swift */; };
 		5288077421C6962400FC4D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5288077321C6962400FC4D75 /* Assets.xcassets */; };
 		5288077721C6962400FC4D75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5288077521C6962400FC4D75 /* LaunchScreen.storyboard */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5275AEA621D92C0100174216 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
+		5275AEA921D92CB500174216 /* SwipingNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsViewModel.swift; sourceTree = "<group>"; };
 		5288076921C6962300FC4D75 /* Swiping News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiping News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5288076C21C6962300FC4D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5288077321C6962400FC4D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5275AEA521D92BEA00174216 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5275AEA621D92C0100174216 /* NewsDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5275AEA821D92C9B00174216 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5275AEA921D92CB500174216 /* SwipingNewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5288076021C6962300FC4D75 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +129,7 @@
 		52F7872421D58482001D0438 /* NewsDetails */ = {
 			isa = PBXGroup;
 			children = (
+				5275AEA521D92BEA00174216 /* ViewModel */,
 				52F7872621D586AF001D0438 /* Model */,
 				52F7872521D586A4001D0438 /* View */,
 			);
@@ -134,6 +155,7 @@
 		BB74256421CA7D1E00FDA47C /* News */ = {
 			isa = PBXGroup;
 			children = (
+				5275AEA821D92C9B00174216 /* ViewModel */,
 				52A1A89E21CB0311000AE632 /* Model */,
 				52B9D9AF21C9C7A500A2F99C /* View */,
 			);
@@ -222,9 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5275AEA721D92C0100174216 /* NewsDetailViewModel.swift in Sources */,
 				52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */,
 				5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */,
 				52A1A8A021CB0328000AE632 /* SwipingNewsModel.swift in Sources */,
+				5275AEAA21D92CB500174216 /* SwipingNewsViewModel.swift in Sources */,
 				52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */,
 				52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */,
 				BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */,
