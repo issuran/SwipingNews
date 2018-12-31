@@ -12,7 +12,7 @@ build/
 DerivedData/
 
 ## Files
-Keys.swift
+Swiping\ News/Utils/Keys.swift
 
 ## Various settings
 *.pbxuser

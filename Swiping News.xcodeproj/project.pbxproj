@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521630B521D9C43B00E98036 /* GoogleNewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521630B421D9C43B00E98036 /* GoogleNewsAPI.swift */; };
+		521630B921D9C50F00E98036 /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521630B821D9C50F00E98036 /* EndpointType.swift */; };
+		521630BE21D9CA2400E98036 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521630BD21D9CA2400E98036 /* Keys.swift */; };
 		5275AEA721D92C0100174216 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275AEA621D92C0100174216 /* NewsDetailViewModel.swift */; };
 		5275AEAA21D92CB500174216 /* SwipingNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275AEA921D92CB500174216 /* SwipingNewsViewModel.swift */; };
 		5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288076C21C6962300FC4D75 /* AppDelegate.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521630B421D9C43B00E98036 /* GoogleNewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleNewsAPI.swift; sourceTree = "<group>"; };
+		521630B821D9C50F00E98036 /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		521630BD21D9CA2400E98036 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		5275AEA621D92C0100174216 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
 		5275AEA921D92CB500174216 /* SwipingNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsViewModel.swift; sourceTree = "<group>"; };
 		5288076921C6962300FC4D75 /* Swiping News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swiping News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +59,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		521630B321D9C3E400E98036 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				521630B421D9C43B00E98036 /* GoogleNewsAPI.swift */,
+				521630B821D9C50F00E98036 /* EndpointType.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		521630BA21D9C71900E98036 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				521630BD21D9CA2400E98036 /* Keys.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5275AEA521D92BEA00174216 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +111,8 @@
 		5288076B21C6962300FC4D75 /* Swiping News */ = {
 			isa = PBXGroup;
 			children = (
+				521630BA21D9C71900E98036 /* Utils */,
+				521630B321D9C3E400E98036 /* Networking */,
 				52F7872421D58482001D0438 /* NewsDetails */,
 				BB74256421CA7D1E00FDA47C /* News */,
 				52B9D9AA21C9C4EB00A2F99C /* Coordinator */,
@@ -248,8 +273,11 @@
 				52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */,
 				5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */,
 				52A1A8A021CB0328000AE632 /* SwipingNewsModel.swift in Sources */,
+				521630BE21D9CA2400E98036 /* Keys.swift in Sources */,
 				5275AEAA21D92CB500174216 /* SwipingNewsViewModel.swift in Sources */,
 				52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */,
+				521630B521D9C43B00E98036 /* GoogleNewsAPI.swift in Sources */,
+				521630B921D9C50F00E98036 /* EndpointType.swift in Sources */,
 				52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */,
 				BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */,
 				BB74257121CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift in Sources */,
