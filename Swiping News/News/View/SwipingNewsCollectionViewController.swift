@@ -44,11 +44,20 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let service = NewsNetwork()
+        service.performRequest()
 
         navigationItem.title = "News"
         
         self.collectionView.register(UINib(nibName: "SwipingNewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.backgroundColor = UIColor.white
+        
+        addSettingsButton()
+    }
+    
+    func addSettingsButton() {
+        let settings = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.settingAction))
+        self.navigationItem.rightBarButtonItem = settings
     }
     
     func addBackButton() {
@@ -75,6 +84,10 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
                 self.navigationItem.hidesBackButton = true
                 self.collectionView.reloadItems(at: indexPath)
             }), completion: nil)
+    }
+    
+    @objc func settingAction() -> Void {
+        print("Display Settings")
     }
 
     // MARK: UICollectionViewDataSource
