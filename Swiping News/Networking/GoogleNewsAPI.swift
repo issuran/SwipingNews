@@ -22,7 +22,7 @@ extension GoogleNewsAPI: EndpointType {
         case .topHeadlines():
             let base = self.baseURL.absoluteString
             let country = Countries.country(.Brasil)()
-            print("\(base)/top-headlines?country=\(country)&apiKey=\(Keys.API_KEY)")
+            
             return "\(base)/top-headlines?country=\(country)&apiKey=\(Keys.API_KEY)"
         }
     }

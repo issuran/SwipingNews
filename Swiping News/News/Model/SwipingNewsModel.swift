@@ -12,4 +12,12 @@ struct SwipingNewsModel {
     let newsImage: UIImage
     let newsHeadline: String
     let newsBrief: String
+    
+//    func convert(article: Article) -> SwipingNewsModel {
+//        return SwipingNewsModel(
+//            newsImage: <#T##UIImage#>,
+//            newsHeadline: article.title,
+//            newsBrief: article.content
+//        )
+//    }
 }

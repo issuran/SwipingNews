@@ -22,8 +22,9 @@ class NewsNetwork {
                 return
             }
             do {
-                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-                print(jsonResponse)
+                let decoder = JSONDecoder()
+                let array = try decoder.decode(Articles.self, from: data)
+                print(array)
             } catch let parsingError {
                 print("Error aiaiai", parsingError)
             }

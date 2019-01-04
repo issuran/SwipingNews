@@ -20,6 +20,8 @@
 		52A1A8A021CB0328000AE632 /* SwipingNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */; };
 		52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D9AB21C9C50700A2F99C /* CoordinatorProtocol.swift */; };
 		52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D9AD21C9C54A00A2F99C /* AppCoordinator.swift */; };
+		52D57B6A21DBA07D00A5E2B5 /* NewsArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */; };
+		52D57B6D21DBAABA00A5E2B5 /* UIImage+DownloadImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D57B6C21DBAABA00A5E2B5 /* UIImage+DownloadImageExtension.swift */; };
 		52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */; };
 		52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */; };
 		72DFA72BD618EC39BB92FFCC /* Pods_Swiping_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8725B7486FBFDD45FFD38F /* Pods_Swiping_News.framework */; };
@@ -46,6 +48,8 @@
 		52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsModel.swift; sourceTree = "<group>"; };
 		52B9D9AB21C9C50700A2F99C /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		52B9D9AD21C9C54A00A2F99C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleModel.swift; sourceTree = "<group>"; };
+		52D57B6C21DBAABA00A5E2B5 /* UIImage+DownloadImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownloadImageExtension.swift"; sourceTree = "<group>"; };
 		52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */,
+				52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +174,14 @@
 				BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52D57B6B21DBAA9A00A5E2B5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				52D57B6C21DBAABA00A5E2B5 /* UIImage+DownloadImageExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		52F7872421D58482001D0438 /* NewsDetails */ = {
@@ -209,6 +222,7 @@
 		BB74256421CA7D1E00FDA47C /* News */ = {
 			isa = PBXGroup;
 			children = (
+				52D57B6B21DBAA9A00A5E2B5 /* Extension */,
 				5203A69D21DA82E200961636 /* Networking */,
 				5275AEA821D92C9B00174216 /* ViewModel */,
 				52A1A89E21CB0311000AE632 /* Model */,
@@ -348,8 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D57B6A21DBA07D00A5E2B5 /* NewsArticleModel.swift in Sources */,
 				5275AEA721D92C0100174216 /* NewsDetailViewModel.swift in Sources */,
 				52B9D9AE21C9C54A00A2F99C /* AppCoordinator.swift in Sources */,
+				52D57B6D21DBAABA00A5E2B5 /* UIImage+DownloadImageExtension.swift in Sources */,
 				5288076D21C6962300FC4D75 /* AppDelegate.swift in Sources */,
 				5203A69F21DA82F900961636 /* NewsNetwork.swift in Sources */,
 				52A1A8A021CB0328000AE632 /* SwipingNewsModel.swift in Sources */,
