@@ -9,7 +9,7 @@
 import UIKit
 
 enum GoogleNewsAPI {
-    case topHeadlines()
+    case topHeadlines
 }
 
 extension GoogleNewsAPI: EndpointType {
@@ -19,7 +19,7 @@ extension GoogleNewsAPI: EndpointType {
     
     var path: String {
         switch self {
-        case .topHeadlines():
+        case .topHeadlines:
             let base = self.baseURL.absoluteString
             let country = Countries.country(.Brasil)()
             
