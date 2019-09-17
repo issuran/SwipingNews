@@ -7,28 +7,26 @@
 //
 
 import UIKit
-import Foundation
 
-class NewsNetwork {
-    let url = URL(string: GoogleNewsAPI.topHeadlines().path)
-    
-    func performRequest() {
-        guard let url = self.url else {
-            fatalError()
-        }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "Error Response eieiei")
-                return
+class NewsNetwork: ServiceProvider<GoogleNewsAPI> {
+    func getTopHeadlines(country: String, completion: @escaping (Result<Articles?>) -> Void) {
+        let provider = ServiceProvider<GoogleNewsAPI>()
+        
+        do {
+            try provider.execute(service: .topHeadlines(country: country)) { (result) in
+                switch result {
+                case .success(let data, let response):
+                    let decoder = JSONDecoder()
+                    let model = try! decoder.decode(Articles.self, from: data)
+                    completion(.success(model, response))
+                case .failure(let error):
+                    completion(.failure(error))
+                case .empty:
+                    completion(.empty)
+                }
             }
-            do {
-                let decoder = JSONDecoder()
-                let array = try decoder.decode(Articles.self, from: data)
-                print(array)
-            } catch let parsingError {
-                print("Error aiaiai", parsingError)
-            }
+        } catch {
+            completion(.empty)
         }
-        task.resume()
     }
 }

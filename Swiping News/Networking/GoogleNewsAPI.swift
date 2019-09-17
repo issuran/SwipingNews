@@ -9,21 +9,38 @@
 import UIKit
 
 enum GoogleNewsAPI {
-    case topHeadlines
+    case topHeadlines(country: String)
 }
 
-extension GoogleNewsAPI: EndpointType {
-    var baseURL: URL {
-        return URL(string: "https://newsapi.org/v2")!
+extension GoogleNewsAPI: ServiceProtocol {
+    var scheme: String {
+        return "https"
+    }
+    
+    var host: String {
+        return "newsapi.org"
+    }
+    
+    var method: HttpMethod {
+        switch self {
+        case .topHeadlines:
+            return .get
+        }
     }
     
     var path: String {
         switch self {
         case .topHeadlines:
-            let base = self.baseURL.absoluteString
-            let country = Countries.country(.Brasil)()
-            
-            return "\(base)/top-headlines?country=\(country)&apiKey=\(Keys.API_KEY)"
+            return "/top-headlines"
+        }
+    }
+    
+    var task: HttpTask {
+        switch self {
+        case .topHeadlines(let country):
+            let parameters = ["country": country,
+                              "apiKey": Keys.API_KEY]
+            return .requestUrlParameters(urlParameters: parameters)
         }
     }
 }

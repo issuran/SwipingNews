@@ -10,7 +10,9 @@ import Foundation
 
 class SwipingNewsViewModel {
     
+    let service = NewsNetwork()
     var coordinator: AppCoordinator!
+    var topHeadlines: Articles?
     
     init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
@@ -18,5 +20,20 @@ class SwipingNewsViewModel {
     
     func callNewsDetail(model: SwipingNewsModel) {
         self.coordinator.callNewsDetail(model: model)
+    }
+    
+    func getTopHeadlines() {
+        service.getTopHeadlines(country: "br") { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let articles, _):
+                self.topHeadlines = articles
+                print(self.topHeadlines ?? "")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            case .empty:
+                print("Empty result")
+            }
+        }
     }
 }

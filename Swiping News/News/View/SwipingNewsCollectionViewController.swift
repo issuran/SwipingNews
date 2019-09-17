@@ -44,9 +44,9 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let service = NewsNetwork()
-        service.performRequest()
-
+        
+        viewModel.getTopHeadlines()
+        
         navigationItem.title = "News"
         
         self.collectionView.register(UINib(nibName: "SwipingNewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
