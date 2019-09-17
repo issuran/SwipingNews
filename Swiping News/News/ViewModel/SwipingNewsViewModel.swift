@@ -13,6 +13,7 @@ class SwipingNewsViewModel {
     let service = NewsNetwork()
     var coordinator: AppCoordinator!
     var topHeadlines: Articles?
+    var requestStatus = Observable(RequestStatus.empty)
     
     init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
@@ -23,16 +24,18 @@ class SwipingNewsViewModel {
     }
     
     func getTopHeadlines() {
-        service.getTopHeadlines(country: "br") { [weak self] (result) in
+        requestStatus.value = .loading
+        service.getTopHeadlines(country: Countries.Brasil.country()) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let articles, _):
                 self.topHeadlines = articles
-                // SET OBSERVABLE WITH RESULT
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
+                self.requestStatus.value = .load
+            case .failure:
+                // TODO: HANDLE ERROR
+                self.requestStatus.value = .error
             case .empty:
-                print("Empty result")
+                self.requestStatus.value = .empty
             }
         }
     }

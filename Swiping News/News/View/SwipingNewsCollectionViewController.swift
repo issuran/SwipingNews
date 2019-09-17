@@ -45,14 +45,32 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getTopHeadlines()
-        
         navigationItem.title = "News"
         
-        self.collectionView.register(UINib(nibName: "SwipingNewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(UINib(nibName: "SwipingNewsCollectionViewCell", bundle: nil),
+                                     forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.backgroundColor = UIColor.white
         
         addSettingsButton()
+        setObservables()
+        
+        viewModel.getTopHeadlines()
+    }
+    
+    func setObservables() {
+        viewModel.requestStatus.didChange = { [weak self] status in
+            guard let self = self else { return }
+            switch status {
+            case .loading:
+                print("💛Loading")
+            case .load:
+                print("💙Load")
+            case .error:
+                print("💜Error")
+            case .empty:
+                print("💜Empty")
+            }
+        }
     }
     
     func addSettingsButton() {
