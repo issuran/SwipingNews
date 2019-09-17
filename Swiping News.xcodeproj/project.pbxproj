@@ -26,6 +26,8 @@
 		52D57B6A21DBA07D00A5E2B5 /* NewsArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */; };
 		52F72B7623319BFE00FB8459 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F72B7523319BFE00FB8459 /* Observable.swift */; };
 		52F72B7823319C9500FB8459 /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F72B7723319C9500FB8459 /* RequestStatus.swift */; };
+		52F72B7B2331A1B600FB8459 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F72B7A2331A1B600FB8459 /* HUD.swift */; };
+		52F72B7D2331A23F00FB8459 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F72B7C2331A23F00FB8459 /* UIColor+Utils.swift */; };
 		52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */; };
 		52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */; };
 		72DFA72BD618EC39BB92FFCC /* Pods_Swiping_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8725B7486FBFDD45FFD38F /* Pods_Swiping_News.framework */; };
@@ -58,6 +60,8 @@
 		52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleModel.swift; sourceTree = "<group>"; };
 		52F72B7523319BFE00FB8459 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		52F72B7723319C9500FB8459 /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
+		52F72B7A2331A1B600FB8459 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		52F72B7C2331A23F00FB8459 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 				5203A69921DA6A8000961636 /* Countries.swift */,
 				52F72B7523319BFE00FB8459 /* Observable.swift */,
 				52F72B7723319C9500FB8459 /* RequestStatus.swift */,
+				52F72B7C2331A23F00FB8459 /* UIColor+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -200,9 +205,18 @@
 		52F72B7323319BDD00FB8459 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				52F72B792331A19800FB8459 /* Base */,
 				521630BA21D9C71900E98036 /* Utils */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		52F72B792331A19800FB8459 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				52F72B7A2331A1B600FB8459 /* HUD.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		52F7872421D58482001D0438 /* NewsDetails */ = {
@@ -399,7 +413,9 @@
 				52B9D9AC21C9C50700A2F99C /* CoordinatorProtocol.swift in Sources */,
 				52F72B7823319C9500FB8459 /* RequestStatus.swift in Sources */,
 				52F72B7623319BFE00FB8459 /* Observable.swift in Sources */,
+				52F72B7D2331A23F00FB8459 /* UIColor+Utils.swift in Sources */,
 				BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */,
+				52F72B7B2331A1B600FB8459 /* HUD.swift in Sources */,
 				BB74257121CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift in Sources */,
 				523CB6BD233071B400F10AA7 /* ParameterEncoder.swift in Sources */,
 			);

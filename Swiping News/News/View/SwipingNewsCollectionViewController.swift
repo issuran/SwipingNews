@@ -60,15 +60,18 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     func setObservables() {
         viewModel.requestStatus.didChange = { [weak self] status in
             guard let self = self else { return }
-            switch status {
-            case .loading:
-                print("💛Loading")
-            case .load:
-                print("💙Load")
-            case .error:
-                print("💜Error")
-            case .empty:
-                print("💜Empty")
+            DispatchQueue.main.async {
+                switch status {
+                case .loading:
+                    print("💛Loading")
+                    HUD.shared.showLoading(self.view)
+                case .load:
+                    print("💙Load")
+                    HUD.shared.hideLoading()
+                case .error, .empty:
+                    print("💜Error or Empty")
+                    HUD.shared.hideLoading()
+                }
             }
         }
     }
