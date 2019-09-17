@@ -28,7 +28,7 @@ class SwipingNewsViewModel {
             switch result {
             case .success(let articles, _):
                 self.topHeadlines = articles
-                print(self.topHeadlines ?? "")
+                // SET OBSERVABLE WITH RESULT
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             case .empty:

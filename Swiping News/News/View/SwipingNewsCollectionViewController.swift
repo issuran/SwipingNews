@@ -106,7 +106,13 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     
         // Configure the cell
         cell.newsImageView.image = #imageLiteral(resourceName: imageArray[indexPath.row])
-        cell.newsHeadlineLabel.text = headlineArray[indexPath.row]
+        
+        if let title = viewModel.topHeadlines?.articles[indexPath.row].title {
+            cell.newsHeadlineLabel.text = title
+        } else {
+            cell.newsHeadlineLabel.text = "Title"
+        }
+        
         cell.newsBriefLabel.text = textArray[indexPath.row]
         
         cell.newsBriefLabel.numberOfLines = 3
