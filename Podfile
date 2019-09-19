@@ -7,4 +7,5 @@ target 'Swiping News' do
 
   # Pods for Swiping News
 pod 'PromiseKit/Foundation'
+pod 'lottie-ios'
 end

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,8 @@
 		52F72B832331A51900FB8459 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F72B812331A51900FB8459 /* SplashViewController.xib */; };
 		52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */; };
 		52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */; };
+		52FAAD2823330E290000BF9D /* BrandonText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD2723330D660000BF9D /* BrandonText-Medium.otf */; };
+		52FAAD2A233319740000BF9D /* swipping-news-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD29233319730000BF9D /* swipping-news-logo.json */; };
 		72DFA72BD618EC39BB92FFCC /* Pods_Swiping_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8725B7486FBFDD45FFD38F /* Pods_Swiping_News.framework */; };
 		BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */; };
 		BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */; };
@@ -68,6 +70,8 @@
 		52F72B812331A51900FB8459 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		52FAAD2723330D660000BF9D /* BrandonText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonText-Medium.otf"; sourceTree = "<group>"; };
+		52FAAD29233319730000BF9D /* swipping-news-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "swipping-news-logo.json"; sourceTree = "<group>"; };
 		BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewController.swift; sourceTree = "<group>"; };
 		BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsCollectionViewController.xib; sourceTree = "<group>"; };
 		BB74256F21CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		5288076B21C6962300FC4D75 /* Swiping News */ = {
 			isa = PBXGroup;
 			children = (
+				52FAAD2623330D4E0000BF9D /* Fonts */,
+				52FAAD29233319730000BF9D /* swipping-news-logo.json */,
 				52F72B7323319BDD00FB8459 /* Helpers */,
 				521630B321D9C3E400E98036 /* Networking */,
 				52F72B7E2331A4C900FB8459 /* Sections */,
@@ -235,8 +241,7 @@
 		52F72B7F2331A4EA00FB8459 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				52F72B802331A51900FB8459 /* SplashViewController.swift */,
-				52F72B812331A51900FB8459 /* SplashViewController.xib */,
+				52FAAD232332FFA60000BF9D /* View */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -265,6 +270,31 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		52FAAD222332FF9F0000BF9D /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		52FAAD232332FFA60000BF9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52F72B802331A51900FB8459 /* SplashViewController.swift */,
+				52F72B812331A51900FB8459 /* SplashViewController.xib */,
+				52FAAD222332FF9F0000BF9D /* Animation */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52FAAD2623330D4E0000BF9D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				52FAAD2723330D660000BF9D /* BrandonText-Medium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		88B226C5D013CEC737AD209E /* Pods */ = {
@@ -364,9 +394,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FAAD2823330E290000BF9D /* BrandonText-Medium.otf in Resources */,
 				5288077721C6962400FC4D75 /* LaunchScreen.storyboard in Resources */,
 				52F72B832331A51900FB8459 /* SplashViewController.xib in Resources */,
 				52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */,
+				52FAAD2A233319740000BF9D /* swipping-news-logo.json in Resources */,
 				BB74257221CAB32400FDA47C /* SwipingNewsCollectionViewCell.xib in Resources */,
 				BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */,
 				5288077421C6962400FC4D75 /* Assets.xcassets in Resources */,
@@ -399,17 +431,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Swiping News/Pods-Swiping News-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiping News/Pods-Swiping News-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiping News/Pods-Swiping News-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swiping News/Pods-Swiping News-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiping News/Pods-Swiping News-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

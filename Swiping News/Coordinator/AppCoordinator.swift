@@ -25,11 +25,15 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        swipingNewsCollectionViewController = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        swipingNewsViewModel = SwipingNewsViewModel(coordinator: self)
-        swipingNewsCollectionViewController.start(viewModel: swipingNewsViewModel)
-        navigationController.setViewControllers([swipingNewsCollectionViewController], animated: true)
+        let startView = SplashViewController()
+        navigationController.setViewControllers([startView], animated: true)
     }
+//    func start() {
+//        swipingNewsCollectionViewController = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+//        swipingNewsViewModel = SwipingNewsViewModel(coordinator: self)
+//        swipingNewsCollectionViewController.start(viewModel: swipingNewsViewModel)
+//        navigationController.setViewControllers([swipingNewsCollectionViewController], animated: true)
+//    }
 }
 
 extension AppCoordinator: NewsDetailDelegate {
