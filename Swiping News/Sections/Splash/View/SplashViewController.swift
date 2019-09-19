@@ -15,6 +15,8 @@ class SplashViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     
+    var delegate: SplashDelegate!
+    
     let animation = Animation.named("swipping-news-logo")
     
     override func viewDidLoad() {
@@ -28,9 +30,9 @@ class SplashViewController: UIViewController {
         titleLabel.alpha = 0
         authorLabel.alpha = 0
         
-        UIView.animate(withDuration: 2.0,
-                       delay: 1.0,
-                       options: .transitionCurlUp,
+        UIView.animate(withDuration: 2.5,
+                       delay: 1.5,
+                       options: .transitionCurlDown,
                        animations: {
                         self.titleLabel.isHidden = false
                         self.authorLabel.isHidden = false
@@ -49,7 +51,7 @@ class SplashViewController: UIViewController {
         animationContainerView.addSubview(animationView)
         
         animationView.play { (done) in
-            // TODO: CALL FIRST SCREEN
+            self.delegate.didFinishSplash()
         }
     }
 }

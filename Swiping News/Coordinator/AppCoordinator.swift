@@ -26,14 +26,18 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let startView = SplashViewController()
+        startView.delegate = self
         navigationController.setViewControllers([startView], animated: true)
     }
-//    func start() {
-//        swipingNewsCollectionViewController = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-//        swipingNewsViewModel = SwipingNewsViewModel(coordinator: self)
-//        swipingNewsCollectionViewController.start(viewModel: swipingNewsViewModel)
-//        navigationController.setViewControllers([swipingNewsCollectionViewController], animated: true)
-//    }
+}
+
+extension AppCoordinator: SplashDelegate {
+    func didFinishSplash() {
+        swipingNewsCollectionViewController = SwipingNewsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        swipingNewsViewModel = SwipingNewsViewModel(coordinator: self)
+        swipingNewsCollectionViewController.start(viewModel: swipingNewsViewModel)
+        navigationController.setViewControllers([swipingNewsCollectionViewController], animated: true)
+    }
 }
 
 extension AppCoordinator: NewsDetailDelegate {

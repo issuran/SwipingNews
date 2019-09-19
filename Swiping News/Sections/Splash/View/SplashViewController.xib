@@ -38,10 +38,10 @@
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-wj-ih3" customClass="LottieView" customModule="Lottie">
                             <rect key="frame" x="0.0" y="54" width="414" height="246"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="IkS-wj-ih3" secondAttribute="trailing" id="21W-hH-HaN"/>
                         <constraint firstItem="7hC-NT-raH" firstAttribute="top" secondItem="Jam-hC-DTa" secondAttribute="top" id="PRI-e5-XHV"/>
@@ -60,7 +60,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Jam-hC-DTa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9nC-NX-B7z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jam-hC-DTa" secondAttribute="trailing" id="HmV-4e-Uq9"/>
