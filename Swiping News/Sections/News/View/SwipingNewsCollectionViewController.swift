@@ -59,10 +59,6 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
         viewModel.getTopHeadlines()
     }
     
-    override func viewDidLayoutSubviews() {
-        view.layoutSkeletonIfNeeded()
-    }
-    
     func setObservables() {
         viewModel.requestStatus.didChange = { [weak self] status in
             guard let self = self else { return }
@@ -125,13 +121,9 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        guard let items = viewModel.topHeadlines?.articles.count else { return 2 }
+        return items
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -164,7 +156,7 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
             cell.newsHeadlineLabel.stopSkeletonAnimation()
             
             // Configure the cell
-            cell.newsImageView.image = #imageLiteral(resourceName: imageArray[indexPath.row])
+            cell.newsImageView.image = #imageLiteral(resourceName: imageArray[0])
             
             if let title = viewModel.topHeadlines?.articles[indexPath.row].title {
                 cell.newsHeadlineLabel.text = title
@@ -172,7 +164,11 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
                 cell.newsHeadlineLabel.text = "Title"
             }
             
-            cell.newsBriefLabel.text = textArray[indexPath.row]
+            if let briefing = viewModel.topHeadlines?.articles[indexPath.row].content {
+                cell.newsBriefLabel.text = briefing
+            } else {
+                cell.newsBriefLabel.text = "Briefing"
+            }
             
             cell.newsBriefLabel.numberOfLines = 3
             cell.trailingConstraint.constant = 10
@@ -189,7 +185,8 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
             cell.layer.shadowRadius = 4.0
             cell.layer.shadowOpacity = 0.7
             cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds,
+                                                 cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         }
         
         return cell
@@ -207,11 +204,14 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
     
     // MARK: UICollectionViewDelegate
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let title = viewModel.topHeadlines?.articles[indexPath.row].title else { return }
+        guard let briefing = viewModel.topHeadlines?.articles[indexPath.row].content else { return }
+        
         let model = SwipingNewsModel(
-            newsImage: #imageLiteral(resourceName: imageArray[indexPath.row]),
-            newsHeadline: headlineArray[indexPath.row],
-            newsBrief: textArray[indexPath.row]
+            newsImage: #imageLiteral(resourceName: imageArray[0]),
+            newsHeadline: title,
+            newsBrief: briefing
         )
         
         self.viewModel.callNewsDetail(model: model)
