@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SkeletonView
 
 private let reuseIdentifier = "swipingNewsCell"
 
-class SwipingNewsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class SwipingNewsCollectionViewController: UICollectionViewController,
+                                            UICollectionViewDelegateFlowLayout {
     
     var viewModel: SwipingNewsViewModel!
     
@@ -57,6 +59,10 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
         viewModel.getTopHeadlines()
     }
     
+    override func viewDidLayoutSubviews() {
+        view.layoutSkeletonIfNeeded()
+    }
+    
     func setObservables() {
         viewModel.requestStatus.didChange = { [weak self] status in
             guard let self = self else { return }
@@ -64,13 +70,19 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
                 switch status {
                 case .loading:
                     print("💛Loading")
-                    HUD.shared.showLoading(self.view)
+//                    HUD.shared.showLoading(self.view)
+//                    self.collectionView.startSkeletonAnimation()
+//                    self.collectionView.showAnimatedGradientSkeleton()
                 case .load:
                     print("💙Load")
-                    HUD.shared.hideLoading()
+//                    HUD.shared.hideLoading()
+                    self.collectionView.reloadData()
+//                    self.collectionView.stopSkeletonAnimation()
+//                    self.collectionView.hideSkeleton()
                 case .error, .empty:
                     print("💜Error or Empty")
-                    HUD.shared.hideLoading()
+//                    HUD.shared.hideLoading()
+//                    self.collectionView.stopSkeletonAnimation()
                 }
             }
         }
@@ -124,34 +136,61 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SwipingNewsCollectionViewCell
-    
-        // Configure the cell
-        cell.newsImageView.image = #imageLiteral(resourceName: imageArray[indexPath.row])
         
-        if let title = viewModel.topHeadlines?.articles[indexPath.row].title {
-            cell.newsHeadlineLabel.text = title
+        if viewModel.requestStatus.value == .loading {
+            cell.newsImageView.clipsToBounds = true
+            cell.newsImageView.showAnimatedGradientSkeleton()
+            cell.newsImageView.startSkeletonAnimation()
+            
+            cell.newsBriefLabel.showAnimatedGradientSkeleton()
+            cell.newsBriefLabel.startSkeletonAnimation()
+            
+            cell.newsHeadlineLabel.showAnimatedGradientSkeleton()
+            cell.newsHeadlineLabel.startSkeletonAnimation()
+        } else if viewModel.requestStatus.value == .error || viewModel.requestStatus.value == .empty {
+            cell.newsImageView.stopSkeletonAnimation()
+            
+            cell.newsBriefLabel.stopSkeletonAnimation()
+            
+            cell.newsHeadlineLabel.stopSkeletonAnimation()
         } else {
-            cell.newsHeadlineLabel.text = "Title"
+            cell.newsImageView.hideSkeleton()
+            cell.newsImageView.stopSkeletonAnimation()
+            
+            cell.newsBriefLabel.hideSkeleton()
+            cell.newsBriefLabel.stopSkeletonAnimation()
+            
+            cell.newsHeadlineLabel.hideSkeleton()
+            cell.newsHeadlineLabel.stopSkeletonAnimation()
+            
+            // Configure the cell
+            cell.newsImageView.image = #imageLiteral(resourceName: imageArray[indexPath.row])
+            
+            if let title = viewModel.topHeadlines?.articles[indexPath.row].title {
+                cell.newsHeadlineLabel.text = title
+            } else {
+                cell.newsHeadlineLabel.text = "Title"
+            }
+            
+            cell.newsBriefLabel.text = textArray[indexPath.row]
+            
+            cell.newsBriefLabel.numberOfLines = 3
+            cell.trailingConstraint.constant = 10
+            cell.leadingConstraint.constant = 10
+            
+            //This creates the shadows and modifies the cards a little bit
+            cell.newsContentView.layer.cornerRadius = 5.0
+            cell.newsContentView.layer.borderWidth = 1.0
+            cell.newsContentView.layer.borderColor = UIColor.clear.cgColor
+            cell.newsContentView.layer.masksToBounds = true
+            
+            cell.layer.shadowColor = UIColor.gray.cgColor
+            cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+            cell.layer.shadowRadius = 4.0
+            cell.layer.shadowOpacity = 0.7
+            cell.layer.masksToBounds = false
+            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         }
-        
-        cell.newsBriefLabel.text = textArray[indexPath.row]
-        
-        cell.newsBriefLabel.numberOfLines = 3
-        cell.trailingConstraint.constant = 10
-        cell.leadingConstraint.constant = 10
-        
-        //This creates the shadows and modifies the cards a little bit
-        cell.newsContentView.layer.cornerRadius = 5.0
-        cell.newsContentView.layer.borderWidth = 1.0
-        cell.newsContentView.layer.borderColor = UIColor.clear.cgColor
-        cell.newsContentView.layer.masksToBounds = true
-        
-        cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        cell.layer.shadowRadius = 4.0
-        cell.layer.shadowOpacity = 0.7
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         
         return cell
     }
@@ -168,8 +207,7 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
     
     // MARK: UICollectionViewDelegate
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         let model = SwipingNewsModel(
             newsImage: #imageLiteral(resourceName: imageArray[indexPath.row]),
             newsHeadline: headlineArray[indexPath.row],
@@ -177,6 +215,5 @@ class SwipingNewsCollectionViewController: UICollectionViewController, UICollect
         )
         
         self.viewModel.callNewsDetail(model: model)
-        
     }
 }
