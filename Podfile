@@ -6,7 +6,6 @@ target 'Swiping News' do
   use_frameworks!
 
   # Pods for Swiping News
-pod 'PromiseKit/Foundation'
 pod 'lottie-ios'
 pod 'SkeletonView'
 end

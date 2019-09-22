@@ -35,7 +35,7 @@
 		52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */; };
 		52FAAD2823330E290000BF9D /* BrandonText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD2723330D660000BF9D /* BrandonText-Medium.otf */; };
 		52FAAD2A233319740000BF9D /* swipping-news-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD29233319730000BF9D /* swipping-news-logo.json */; };
-		72DFA72BD618EC39BB92FFCC /* Pods_Swiping_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8725B7486FBFDD45FFD38F /* Pods_Swiping_News.framework */; };
+		A76DC329D144F7971C2AB601 /* Pods_Swiping_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5FDED7C0B7CDE7878B3611 /* Pods_Swiping_News.framework */; };
 		BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */; };
 		BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */; };
 		BB74257121CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256F21CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift */; };
@@ -43,7 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A67E857D71BBDF543683874 /* Pods-Swiping News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiping News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiping News/Pods-Swiping News.release.xcconfig"; sourceTree = "<group>"; };
 		5203A69921DA6A8000961636 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		5203A69E21DA82F900961636 /* NewsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNetwork.swift; sourceTree = "<group>"; };
 		521630B421D9C43B00E98036 /* GoogleNewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleNewsAPI.swift; sourceTree = "<group>"; };
@@ -78,8 +77,9 @@
 		BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsCollectionViewController.xib; sourceTree = "<group>"; };
 		BB74256F21CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB74257021CAB32400FDA47C /* SwipingNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsCollectionViewCell.xib; sourceTree = "<group>"; };
-		CC8725B7486FBFDD45FFD38F /* Pods_Swiping_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiping_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFF9E24E6A8AF66246C7AC3E /* Pods-Swiping News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiping News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiping News/Pods-Swiping News.debug.xcconfig"; sourceTree = "<group>"; };
+		CCD2993CCB30791B696AA19B /* Pods-Swiping News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiping News.release.xcconfig"; path = "Target Support Files/Pods-Swiping News/Pods-Swiping News.release.xcconfig"; sourceTree = "<group>"; };
+		CF5FDED7C0B7CDE7878B3611 /* Pods_Swiping_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiping_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6A036EB7E6E1EF4625896F6 /* Pods-Swiping News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiping News.debug.xcconfig"; path = "Target Support Files/Pods-Swiping News/Pods-Swiping News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +87,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72DFA72BD618EC39BB92FFCC /* Pods_Swiping_News.framework in Frameworks */,
+				A76DC329D144F7971C2AB601 /* Pods_Swiping_News.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30E606149433B78F2B54357B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6A036EB7E6E1EF4625896F6 /* Pods-Swiping News.debug.xcconfig */,
+				CCD2993CCB30791B696AA19B /* Pods-Swiping News.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3284E21994A2B02F89026EEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF5FDED7C0B7CDE7878B3611 /* Pods_Swiping_News.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5203A69D21DA82E200961636 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +173,8 @@
 			children = (
 				5288076B21C6962300FC4D75 /* Swiping News */,
 				5288076A21C6962300FC4D75 /* Products */,
-				88B226C5D013CEC737AD209E /* Pods */,
-				CEF68B6CE22769B27CA5E4DB /* Frameworks */,
+				30E606149433B78F2B54357B /* Pods */,
+				3284E21994A2B02F89026EEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -308,15 +326,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		88B226C5D013CEC737AD209E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FFF9E24E6A8AF66246C7AC3E /* Pods-Swiping News.debug.xcconfig */,
-				1A67E857D71BBDF543683874 /* Pods-Swiping News.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BB74256421CA7D1E00FDA47C /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,14 +346,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		CEF68B6CE22769B27CA5E4DB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CC8725B7486FBFDD45FFD38F /* Pods_Swiping_News.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,11 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5288077B21C6962400FC4D75 /* Build configuration list for PBXNativeTarget "Swiping News" */;
 			buildPhases = (
-				0D92F362A691224161888847 /* [CP] Check Pods Manifest.lock */,
+				C1815DAA2E1F50DE092CCE85 /* [CP] Check Pods Manifest.lock */,
 				5288076521C6962300FC4D75 /* Sources */,
 				5288076621C6962300FC4D75 /* Frameworks */,
 				5288076721C6962300FC4D75 /* Resources */,
-				AE7488A8FC9AF56F2BE5D971 /* [CP] Embed Pods Frameworks */,
+				84839D7ED102269ECA133EBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,25 +420,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D92F362A691224161888847 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Swiping News-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AE7488A8FC9AF56F2BE5D971 /* [CP] Embed Pods Frameworks */ = {
+		84839D7ED102269ECA133EBF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -452,6 +435,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiping News/Pods-Swiping News-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1815DAA2E1F50DE092CCE85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swiping News-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -620,7 +625,7 @@
 		};
 		5288077C21C6962400FC4D75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFF9E24E6A8AF66246C7AC3E /* Pods-Swiping News.debug.xcconfig */;
+			baseConfigurationReference = D6A036EB7E6E1EF4625896F6 /* Pods-Swiping News.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -640,7 +645,7 @@
 		};
 		5288077D21C6962400FC4D75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A67E857D71BBDF543683874 /* Pods-Swiping News.release.xcconfig */;
+			baseConfigurationReference = CCD2993CCB30791B696AA19B /* Pods-Swiping News.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
