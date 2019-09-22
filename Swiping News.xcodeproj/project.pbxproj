@@ -100,7 +100,6 @@
 				D6A036EB7E6E1EF4625896F6 /* Pods-Swiping News.debug.xcconfig */,
 				CCD2993CCB30791B696AA19B /* Pods-Swiping News.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -380,6 +379,7 @@
 				TargetAttributes = {
 					5288076821C6962300FC4D75 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -638,7 +638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.optimize7.Swiping-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -658,7 +658,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.optimize7.Swiping-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

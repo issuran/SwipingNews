@@ -8,4 +8,5 @@ target 'Swiping News' do
   # Pods for Swiping News
 pod 'lottie-ios'
 pod 'SkeletonView'
+pod 'Kingfisher'
 end
