@@ -24,9 +24,9 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    public func configure(with model: SwipingNewsModel) {
-        newsImageView.image = model.newsImage
-        newsHeadlineLabel.text = model.newsHeadline
-        newsBriefLabel.text = model.newsBrief
-    }
+//    public func configure(with model: SwipingNewsModel) {
+//        newsImageView.image = model.newsImage
+//        newsHeadlineLabel.text = model.newsHeadline
+//        newsBriefLabel.text = model.newsBrief
+//    }
 }

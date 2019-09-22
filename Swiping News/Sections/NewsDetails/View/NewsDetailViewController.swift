@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsDetailViewController: UIViewController {
     
@@ -27,7 +28,8 @@ class NewsDetailViewController: UIViewController {
     }
     
     func start() {
-        imageView.image = self.viewModel.model.newsImage
+        let imageUrl = URL(string: self.viewModel.model.newsImage)
+        imageView.kf.setImage(with: imageUrl)
         titleLabel.text = self.viewModel.model.newsHeadline
         newsArticle.text = self.viewModel.model.newsBrief
     }

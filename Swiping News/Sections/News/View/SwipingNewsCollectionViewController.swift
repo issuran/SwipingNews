@@ -8,6 +8,7 @@
 
 import UIKit
 import SkeletonView
+import Kingfisher
 
 private let reuseIdentifier = "swipingNewsCell"
 
@@ -127,7 +128,7 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SwipingNewsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SwipingNewsCollectionViewCell        
         
         if viewModel.requestStatus.value == .loading {
             cell.newsImageView.clipsToBounds = true
@@ -156,7 +157,12 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
             cell.newsHeadlineLabel.stopSkeletonAnimation()
             
             // Configure the cell
-            cell.newsImageView.image = #imageLiteral(resourceName: imageArray[0])
+            if let url = viewModel.topHeadlines?.articles[indexPath.row].urlToImage {
+                let imageUrl = URL(string: url)
+                cell.newsImageView.kf.setImage(with: imageUrl)
+            } else {
+                cell.newsImageView.image = #imageLiteral(resourceName: imageArray[0])
+            }
             
             if let title = viewModel.topHeadlines?.articles[indexPath.row].title {
                 cell.newsHeadlineLabel.text = title
@@ -207,9 +213,10 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let title = viewModel.topHeadlines?.articles[indexPath.row].title else { return }
         guard let briefing = viewModel.topHeadlines?.articles[indexPath.row].content else { return }
+        guard let imagePath = viewModel.topHeadlines?.articles[indexPath.row].urlToImage else { return }
         
         let model = SwipingNewsModel(
-            newsImage: #imageLiteral(resourceName: imageArray[0]),
+            newsImage: imagePath,
             newsHeadline: title,
             newsBrief: briefing
         )

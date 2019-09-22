@@ -9,7 +9,7 @@
 import UIKit
 
 struct SwipingNewsModel {
-    let newsImage: UIImage
+    let newsImage: String
     let newsHeadline: String
     let newsBrief: String
     
