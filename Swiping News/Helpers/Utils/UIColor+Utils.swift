@@ -36,5 +36,13 @@ extension UIColor {
         static let darkPrimaryColor = UIColor(hex: "C51144")
         static let lightPrimaryColor = UIColor(hex: "F8395F")
         static let greyBackgroundColor = UIColor(hex: "EBEBEB")
+        
+        static let beautifulRedColor = UIColor(hex: "C75C5C")
+        static let beautifulDarkRedColor = UIColor(hex: "A55051")
+        
+        static let beautifulBegeColor = UIColor(hex: "E0E0D1")
+        static let beautifulDarkBegeColor = UIColor(hex: "BAB9AE")
+        
+        static let beautifulDarkBlueColor = UIColor(hex: "4F5D73")
     }
 }

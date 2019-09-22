@@ -17,30 +17,6 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
     
     var viewModel: SwipingNewsViewModel!
     
-    let imageArray = [
-        "mega",
-        "dragonball",
-        "bleach",
-        "naruto",
-        "octo"
-    ]
-    
-    let textArray = [
-        "MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!MegaMan is a game about this robot boy trying hard to save the whole world from its worst nightmare. Dr. Light is dead and you can upgrade yourself finding capsule left behind for you!",
-        "Dragon ball follows Goku on his journey alongside Bulma to find the Dragon Ball which can fulfil their wish to bring back to life Goku's grandfather.",
-        "Bleach tells a story about Ichigo which is a shinigami.",
-        "Naruto is a ninja not usual trying to become the next Hokage. In his journey he wants to be acknowledge by the others in his Village.",
-        "Octopath Traveler is a game based on medieval eras, where you follow 8 travelers, 8 stories, throughout a world full of magic and incredible things."
-    ]
-    
-    let headlineArray = [
-        "Mega Man X",
-        "Dragon Ball",
-        "Bleach",
-        "Naruto",
-        "Octopath Traveler"
-    ]
-    
     func start(viewModel: SwipingNewsViewModel) {
         self.viewModel = viewModel
     }
@@ -156,43 +132,13 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
             cell.newsHeadlineLabel.hideSkeleton()
             cell.newsHeadlineLabel.stopSkeletonAnimation()
             
-            // Configure the cell
-            if let url = viewModel.topHeadlines?.articles[indexPath.row].urlToImage {
-                let imageUrl = URL(string: url)
-                cell.newsImageView.kf.setImage(with: imageUrl)
-            } else {
-                cell.newsImageView.image = #imageLiteral(resourceName: imageArray[0])
-            }
+            guard let urlImage = viewModel.topHeadlines?.articles[indexPath.row].urlToImage else { return cell }
             
-            if let title = viewModel.topHeadlines?.articles[indexPath.row].title {
-                cell.newsHeadlineLabel.text = title
-            } else {
-                cell.newsHeadlineLabel.text = "Title"
-            }
+            guard let newsTitleHeadline = viewModel.topHeadlines?.articles[indexPath.row].title else { return cell }
             
-            if let briefing = viewModel.topHeadlines?.articles[indexPath.row].content {
-                cell.newsBriefLabel.text = briefing
-            } else {
-                cell.newsBriefLabel.text = "Briefing"
-            }
+            guard let newsBrief = viewModel.topHeadlines?.articles[indexPath.row].content else { return cell }
             
-            cell.newsBriefLabel.numberOfLines = 3
-            cell.trailingConstraint.constant = 10
-            cell.leadingConstraint.constant = 10
-            
-            //This creates the shadows and modifies the cards a little bit
-            cell.newsContentView.layer.cornerRadius = 5.0
-            cell.newsContentView.layer.borderWidth = 1.0
-            cell.newsContentView.layer.borderColor = UIColor.clear.cgColor
-            cell.newsContentView.layer.masksToBounds = true
-            
-            cell.layer.shadowColor = UIColor.gray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-            cell.layer.shadowRadius = 4.0
-            cell.layer.shadowOpacity = 0.7
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds,
-                                                 cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+            cell.configure(with: SwipingNewsModel(newsImage: urlImage, newsHeadline: newsTitleHeadline, newsBrief: newsBrief))
         }
         
         return cell
