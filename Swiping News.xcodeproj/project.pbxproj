@@ -34,7 +34,7 @@
 		52F7872921D58A6B001D0438 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */; };
 		52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */; };
 		52FAAD2823330E290000BF9D /* BrandonText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD2723330D660000BF9D /* BrandonText-Medium.otf */; };
-		52FAAD2A233319740000BF9D /* swipping-news-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD29233319730000BF9D /* swipping-news-logo.json */; };
+		52FAAD2A233319740000BF9D /* swiping-news-logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 52FAAD29233319730000BF9D /* swiping-news-logo.json */; };
 		A76DC329D144F7971C2AB601 /* Pods_Swiping_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5FDED7C0B7CDE7878B3611 /* Pods_Swiping_News.framework */; };
 		BB74256C21CA864400FDA47C /* SwipingNewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */; };
 		BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */; };
@@ -72,7 +72,7 @@
 		52F7872721D58A6B001D0438 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		52F7872821D58A6B001D0438 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		52FAAD2723330D660000BF9D /* BrandonText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BrandonText-Medium.otf"; sourceTree = "<group>"; };
-		52FAAD29233319730000BF9D /* swipping-news-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "swipping-news-logo.json"; sourceTree = "<group>"; };
+		52FAAD29233319730000BF9D /* swiping-news-logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "swiping-news-logo.json"; sourceTree = "<group>"; };
 		BB74256A21CA864400FDA47C /* SwipingNewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewController.swift; sourceTree = "<group>"; };
 		BB74256B21CA864400FDA47C /* SwipingNewsCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipingNewsCollectionViewController.xib; sourceTree = "<group>"; };
 		BB74256F21CAB32400FDA47C /* SwipingNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingNewsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				52FAAD2623330D4E0000BF9D /* Fonts */,
-				52FAAD29233319730000BF9D /* swipping-news-logo.json */,
+				52FAAD29233319730000BF9D /* swiping-news-logo.json */,
 				52F72B7323319BDD00FB8459 /* Helpers */,
 				521630B321D9C3E400E98036 /* Networking */,
 				52F72B7E2331A4C900FB8459 /* Sections */,
@@ -410,7 +410,7 @@
 				5288077721C6962400FC4D75 /* LaunchScreen.storyboard in Resources */,
 				52F72B832331A51900FB8459 /* SplashViewController.xib in Resources */,
 				52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */,
-				52FAAD2A233319740000BF9D /* swipping-news-logo.json in Resources */,
+				52FAAD2A233319740000BF9D /* swiping-news-logo.json in Resources */,
 				BB74257221CAB32400FDA47C /* SwipingNewsCollectionViewCell.xib in Resources */,
 				BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */,
 				5288077421C6962400FC4D75 /* Assets.xcassets in Resources */,

@@ -17,7 +17,7 @@ class SplashViewController: UIViewController {
     
     var delegate: SplashDelegate!
     
-    let animation = Animation.named("swipping-news-logo")
+    let animation = Animation.named("swiping-news-logo")
     
     override func viewDidLoad() {
         super.viewDidLoad()
