@@ -18,4 +18,20 @@ struct Article: Codable {
     let content: String?
     let url: String?
     let urlToImage: String?
+    
+    let source: Source?
+    
+    init() {
+        author = "Unknown"
+        title = "Title"
+        content = "Content not found!"
+        url = ""
+        urlToImage = ""
+        source = Source(id: nil, name: "Unknown")
+    }
+}
+
+struct Source: Codable {
+    let id: String?
+    let name: String?
 }

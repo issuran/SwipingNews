@@ -132,16 +132,25 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
             cell.newsHeadlineLabel.hideSkeleton()
             cell.newsHeadlineLabel.stopSkeletonAnimation()
             
-            guard let urlImage = viewModel.topHeadlines?.articles[indexPath.row].urlToImage else { return cell }
+            let urlImage = unwrapStringValues(viewModel.topHeadlines?.articles[indexPath.row].urlToImage)
             
-            guard let newsTitleHeadline = viewModel.topHeadlines?.articles[indexPath.row].title else { return cell }
+            let newsTitleHeadline = unwrapStringValues(viewModel.topHeadlines?.articles[indexPath.row].title)
             
-            guard let newsBrief = viewModel.topHeadlines?.articles[indexPath.row].content else { return cell }
+            let newsBrief = unwrapStringValues(viewModel.topHeadlines?.articles[indexPath.row].content)
             
-            cell.configure(with: SwipingNewsModel(newsImage: urlImage, newsHeadline: newsTitleHeadline, newsBrief: newsBrief))
+            cell.configure(with: SwipingNewsModel(newsImage: urlImage,
+                                                  newsHeadline: newsTitleHeadline,
+                                                  newsBrief: newsBrief))
         }
         
         return cell
+    }
+    
+    func unwrapStringValues(_ string: String?) -> String {
+        guard let unwrappedString = string else {
+            return String()
+        }
+        return unwrappedString
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
