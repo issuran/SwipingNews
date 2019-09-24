@@ -205,7 +205,6 @@
 		52A1A89E21CB0311000AE632 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */,
 				52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */,
 			);
 			path = Model;
@@ -295,6 +294,7 @@
 		52F7872621D586AF001D0438 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52A1A89F21CB0328000AE632 /* SwipingNewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
