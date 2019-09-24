@@ -18,6 +18,8 @@ struct Article: Codable {
     let content: String?
     let url: String?
     let urlToImage: String?
+    let description: String?
+    let publishedAt: String?
     
     let source: Source?
     
@@ -27,7 +29,9 @@ struct Article: Codable {
         content = "Content not found!"
         url = ""
         urlToImage = ""
+        description = ""
         source = Source(id: nil, name: "Unknown")
+        publishedAt = Date().description
     }
 }
 

@@ -39,4 +39,15 @@ class SwipingNewsViewModel {
             }
         }
     }
+    
+    func selectedArticle(index: Int) -> SwipingNewsModel {
+        let article = topHeadlines?.articles[index]
+        let model = SwipingNewsModel(image: article?.urlToImage ?? "",
+                                     headline: article?.title ?? "",
+                                     brief: article?.content ?? "",
+                                     url: article?.url ?? "",
+                                     date: article?.publishedAt ?? "",
+                                     source: article?.source?.name ?? "")
+        return model
+    }
 }

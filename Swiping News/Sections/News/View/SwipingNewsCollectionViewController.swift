@@ -40,22 +40,8 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
         viewModel.requestStatus.didChange = { [weak self] status in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                switch status {
-                case .loading:
-                    print("💛Loading")
-//                    HUD.shared.showLoading(self.view)
-//                    self.collectionView.startSkeletonAnimation()
-//                    self.collectionView.showAnimatedGradientSkeleton()
-                case .load:
-                    print("💙Load")
-//                    HUD.shared.hideLoading()
+                if status == .load {
                     self.collectionView.reloadData()
-//                    self.collectionView.stopSkeletonAnimation()
-//                    self.collectionView.hideSkeleton()
-                case .error, .empty:
-                    print("💜Error or Empty")
-//                    HUD.shared.hideLoading()
-//                    self.collectionView.stopSkeletonAnimation()
                 }
             }
         }
@@ -104,43 +90,13 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SwipingNewsCollectionViewCell        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                      for: indexPath) as! SwipingNewsCollectionViewCell
+        cell.updateShimmer(viewModel.requestStatus.value)
         
-        if viewModel.requestStatus.value == .loading {
-            cell.newsImageView.clipsToBounds = true
-            cell.newsImageView.showAnimatedGradientSkeleton()
-            cell.newsImageView.startSkeletonAnimation()
-            
-            cell.newsBriefLabel.showAnimatedGradientSkeleton()
-            cell.newsBriefLabel.startSkeletonAnimation()
-            
-            cell.newsHeadlineLabel.showAnimatedGradientSkeleton()
-            cell.newsHeadlineLabel.startSkeletonAnimation()
-        } else if viewModel.requestStatus.value == .error || viewModel.requestStatus.value == .empty {
-            cell.newsImageView.stopSkeletonAnimation()
-            
-            cell.newsBriefLabel.stopSkeletonAnimation()
-            
-            cell.newsHeadlineLabel.stopSkeletonAnimation()
-        } else {
-            cell.newsImageView.hideSkeleton()
-            cell.newsImageView.stopSkeletonAnimation()
-            
-            cell.newsBriefLabel.hideSkeleton()
-            cell.newsBriefLabel.stopSkeletonAnimation()
-            
-            cell.newsHeadlineLabel.hideSkeleton()
-            cell.newsHeadlineLabel.stopSkeletonAnimation()
-            
-            let urlImage = unwrapStringValues(viewModel.topHeadlines?.articles[indexPath.row].urlToImage)
-            
-            let newsTitleHeadline = unwrapStringValues(viewModel.topHeadlines?.articles[indexPath.row].title)
-            
-            let newsBrief = unwrapStringValues(viewModel.topHeadlines?.articles[indexPath.row].content)
-            
-            cell.configure(with: SwipingNewsModel(newsImage: urlImage,
-                                                  newsHeadline: newsTitleHeadline,
-                                                  newsBrief: newsBrief))
+        if viewModel.requestStatus.value == .load {
+            let test = viewModel.selectedArticle(index: indexPath.row)
+            cell.configure(with: test)
         }
         
         return cell
@@ -166,15 +122,7 @@ class SwipingNewsCollectionViewController: UICollectionViewController,
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let title = viewModel.topHeadlines?.articles[indexPath.row].title else { return }
-        guard let briefing = viewModel.topHeadlines?.articles[indexPath.row].content else { return }
-        guard let imagePath = viewModel.topHeadlines?.articles[indexPath.row].urlToImage else { return }
-        
-        let model = SwipingNewsModel(
-            newsImage: imagePath,
-            newsHeadline: title,
-            newsBrief: briefing
-        )
+        let model = viewModel.selectedArticle(index: indexPath.row)
         
         self.viewModel.callNewsDetail(model: model)
     }

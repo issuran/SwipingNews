@@ -28,9 +28,9 @@ class NewsDetailViewController: UIViewController {
     }
     
     func start() {
-        let imageUrl = URL(string: self.viewModel.model.newsImage)
+        let imageUrl = URL(string: self.viewModel.model.image)
         imageView.kf.setImage(with: imageUrl)
-        titleLabel.text = self.viewModel.model.newsHeadline
-        newsArticle.text = self.viewModel.model.newsBrief
+        titleLabel.text = self.viewModel.model.headline
+        newsArticle.text = self.viewModel.model.brief
     }
 }

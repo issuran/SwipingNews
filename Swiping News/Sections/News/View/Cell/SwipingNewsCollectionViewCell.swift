@@ -26,7 +26,7 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(with model: SwipingNewsModel) {
-        let imageUrl = URL(string: model.newsImage)
+        let imageUrl = URL(string: model.image)
         let processor = DownsamplingImageProcessor(size: newsImageView.frame.size) >> RoundCornerImageProcessor(cornerRadius: 20)
         newsImageView.kf.indicatorType = .activity
         
@@ -39,8 +39,8 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
                                     .cacheOriginalImage],
                                   progressBlock: nil)
         
-        newsHeadlineLabel.text = model.newsHeadline
-        newsBriefLabel.text = model.newsBrief
+        newsHeadlineLabel.text = model.headline
+        newsBriefLabel.text = model.brief
         
         self.newsBriefLabel.numberOfLines = 3
         self.trailingConstraint.constant = 10
@@ -59,5 +59,32 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds,
                                              cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+    
+    func updateShimmer(_ requestStatus: RequestStatus) {
+        if requestStatus == .loading {
+            self.newsImageView.clipsToBounds = true
+            self.newsImageView.showAnimatedGradientSkeleton()
+            self.newsImageView.startSkeletonAnimation()
+            
+            self.newsBriefLabel.showAnimatedGradientSkeleton()
+            self.newsBriefLabel.startSkeletonAnimation()
+            
+            self.newsHeadlineLabel.showAnimatedGradientSkeleton()
+            self.newsHeadlineLabel.startSkeletonAnimation()
+        } else if requestStatus == .error || requestStatus == .empty {
+            self.newsImageView.stopSkeletonAnimation()
+            self.newsBriefLabel.stopSkeletonAnimation()
+            self.newsHeadlineLabel.stopSkeletonAnimation()
+        } else {
+            self.newsImageView.hideSkeleton()
+            self.newsImageView.stopSkeletonAnimation()
+            
+            self.newsBriefLabel.hideSkeleton()
+            self.newsBriefLabel.stopSkeletonAnimation()
+            
+            self.newsHeadlineLabel.hideSkeleton()
+            self.newsHeadlineLabel.stopSkeletonAnimation()
+        }
     }
 }

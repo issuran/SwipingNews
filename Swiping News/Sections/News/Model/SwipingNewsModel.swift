@@ -9,15 +9,10 @@
 import UIKit
 
 struct SwipingNewsModel {
-    let newsImage: String
-    let newsHeadline: String
-    let newsBrief: String
-    
-//    func convert(article: Article) -> SwipingNewsModel {
-//        return SwipingNewsModel(
-//            newsImage: <#T##UIImage#>,
-//            newsHeadline: article.title,
-//            newsBrief: article.content
-//        )
-//    }
+    let image: String
+    let headline: String
+    let brief: String
+    let url: String
+    let date: String
+    let source: String
 }
