@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class NewsDetailViewController: UIViewController {
+class NewsDetailViewController: BaseViewController {
     
     var viewModel: NewsDetailViewModel!
     
