@@ -16,6 +16,7 @@ class NewsDetailViewController: BaseViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsArticle: UILabel!
+    @IBOutlet weak var sourceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +33,6 @@ class NewsDetailViewController: BaseViewController {
         imageView.kf.setImage(with: imageUrl)
         titleLabel.text = self.viewModel.model.headline
         newsArticle.text = self.viewModel.model.brief
+        sourceLabel.text = "Source: \(self.viewModel.model.url)"
     }
 }

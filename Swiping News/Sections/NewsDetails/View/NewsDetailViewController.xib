@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BrandonText-Medium.otf">
+            <string>BrandonText-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsDetailViewController" customModule="Swiping_News" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="W1Q-K8-IyN" id="5vh-a8-S9e"/>
                 <outlet property="newsArticle" destination="rUT-cY-Cow" id="7ZR-Rx-xDs"/>
+                <outlet property="sourceLabel" destination="eH8-2k-wlC" id="Q5F-Z3-S9s"/>
                 <outlet property="titleLabel" destination="ev8-fN-TvC" id="Pt1-Pp-Mo1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,7 +36,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="321"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4Z-Mq-6Eb" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="242"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W1Q-K8-IyN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -38,31 +44,43 @@
                                                 <constraint firstAttribute="height" constant="128" id="68y-cD-XYS"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev8-fN-TvC">
-                                            <rect key="frame" x="5" y="136" width="365" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev8-fN-TvC">
+                                            <rect key="frame" x="5" y="136" width="365" height="24"/>
+                                            <fontDescription key="fontDescription" name="BrandonText-Medium" family="Brandon Text" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noticia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUT-cY-Cow">
-                                            <rect key="frame" x="5" y="173" width="365" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <rect key="frame" x="6" y="168" width="363" height="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH8-2k-wlC">
+                                            <rect key="frame" x="8" y="201" width="359" height="17"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" name="BrandonText-Medium" family="Brandon Text" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="rUT-cY-Cow" secondAttribute="bottom" constant="25" id="0RG-G8-5Mg"/>
                                         <constraint firstItem="ev8-fN-TvC" firstAttribute="leading" secondItem="f4Z-Mq-6Eb" secondAttribute="leading" constant="5" id="3Pv-gL-eOF"/>
                                         <constraint firstAttribute="trailing" secondItem="W1Q-K8-IyN" secondAttribute="trailing" id="3R9-CM-vwh"/>
+                                        <constraint firstAttribute="bottom" secondItem="eH8-2k-wlC" secondAttribute="bottom" constant="24" id="7MQ-ZE-FKe"/>
                                         <constraint firstItem="W1Q-K8-IyN" firstAttribute="leading" secondItem="f4Z-Mq-6Eb" secondAttribute="leading" id="7lh-ae-aB0"/>
                                         <constraint firstItem="ev8-fN-TvC" firstAttribute="top" secondItem="W1Q-K8-IyN" secondAttribute="bottom" constant="8" id="7pH-H1-Hj6"/>
                                         <constraint firstAttribute="trailing" secondItem="ev8-fN-TvC" secondAttribute="trailing" constant="5" id="Jbe-ok-u8x"/>
-                                        <constraint firstItem="rUT-cY-Cow" firstAttribute="leading" secondItem="f4Z-Mq-6Eb" secondAttribute="leading" constant="5" id="f9Y-Rj-bYh"/>
+                                        <constraint firstAttribute="trailing" secondItem="eH8-2k-wlC" secondAttribute="trailing" constant="8" id="Jp0-ZQ-FjZ"/>
+                                        <constraint firstItem="eH8-2k-wlC" firstAttribute="leading" secondItem="f4Z-Mq-6Eb" secondAttribute="leading" constant="8" id="Nof-26-hZP"/>
+                                        <constraint firstItem="rUT-cY-Cow" firstAttribute="leading" secondItem="f4Z-Mq-6Eb" secondAttribute="leading" constant="6" id="f9Y-Rj-bYh"/>
+                                        <constraint firstItem="eH8-2k-wlC" firstAttribute="top" secondItem="rUT-cY-Cow" secondAttribute="bottom" constant="16" id="kgS-h1-Dk7"/>
                                         <constraint firstItem="rUT-cY-Cow" firstAttribute="top" secondItem="ev8-fN-TvC" secondAttribute="bottom" constant="8" id="lAb-WV-s5g"/>
                                         <constraint firstItem="W1Q-K8-IyN" firstAttribute="top" secondItem="f4Z-Mq-6Eb" secondAttribute="top" id="qkQ-2w-uA9"/>
-                                        <constraint firstAttribute="trailing" secondItem="rUT-cY-Cow" secondAttribute="trailing" constant="5" id="wQS-ml-T7k"/>
+                                        <constraint firstAttribute="trailing" secondItem="rUT-cY-Cow" secondAttribute="trailing" constant="6" id="wQS-ml-T7k"/>
                                     </constraints>
                                 </view>
                             </subviews>
