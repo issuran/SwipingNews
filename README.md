@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/issuran/SwipingNews.svg?branch=master)](https://travis-ci.org/issuran/SwipingNews)
+
 # Swiping News
 Swiping News will show guess what ... news :)
 
