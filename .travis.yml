@@ -1,7 +1,7 @@
 language: swift
 osx_image: xcode10.3
 script:
-    - xcodebuild clean test -workspace Swiping News.xcworkspace -scheme Swiping News -destination "platform=iOS Simulator,name=iPhone 7,OS=12.0"
+  - xcodebuild clean build -workspace Swiping\ News.xcworkspace -scheme Swiping\ News
 branches:
  only:
  - master
