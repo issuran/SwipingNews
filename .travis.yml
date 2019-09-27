@@ -6,3 +6,6 @@ script:
 branches:
  only:
  - master
+
+before_install:
+ - pod install
