@@ -11,3 +11,5 @@ Swiping News is an app where you can swipe your news feed
 
 # Author
 Tiago Oliveira
+
+# Images
