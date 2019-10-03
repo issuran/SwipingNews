@@ -2,7 +2,7 @@ os: osx
 osx_image: xcode10.3
 language: swift
 script:
-  - xcodebuild clean build -workspace Swiping\ News.xcworkspace -scheme "Swiping News" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=12.4,name=iPhone 7" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+  - xcodebuild clean build -workspace Swiping\ News.xcworkspace -scheme "Swiping News" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=12.4,name=iPhone 7" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
 
 branches:
  only:
@@ -11,3 +11,6 @@ branches:
 cache:
   bundler: true
   cocoapods: true
+
+git:
+  quiet: true
