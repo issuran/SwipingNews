@@ -6,3 +6,9 @@ script:
 branches:
  only:
  - master
+
+before_install:
+  - gem install cocoapods
+  - brew update
+  - pod repo update
+  - pod install
