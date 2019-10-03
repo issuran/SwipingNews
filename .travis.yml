@@ -2,7 +2,7 @@ os: osx
 osx_image: xcode10.3
 language: objective-c
 script:
-  - xcodebuild clean build -workspace "Swiping News.xcworkspace" -scheme "Swiping News" -destination "platform=iOS Simulator,OS=12.4,name=iPhone 7" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+  - xcodebuild clean build -workspace "Swiping News.xcworkspace" -scheme "Swiping News" -destination "platform=iOS Simulator,OS=12.4,name=iPhone 7" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -q
 
 branches:
  only:
