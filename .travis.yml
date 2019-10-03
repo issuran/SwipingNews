@@ -7,3 +7,7 @@ script:
 branches:
  only:
  - master
+
+cache:
+  bundler: true
+  cocoapods: true
