@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Keys
 
 enum GoogleNewsAPI {
     case topHeadlines(country: String)
@@ -14,14 +15,8 @@ enum GoogleNewsAPI {
 
 extension GoogleNewsAPI: ServiceProtocol {
     var api_key: String {
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
-            let keys = NSDictionary(contentsOfFile: path)
-            if let dict = keys {
-                let api_key = dict["API_KEY"] as! String
-                return api_key
-            }
-        }
-        return ""
+        let keys = SwipingNewsKeys()
+        return keys.aPI_KEY
     }
     
     var scheme: String {
