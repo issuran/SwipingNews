@@ -26,6 +26,7 @@
 		52CA5B84233AEDEB001A3986 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA5B83233AEDEB001A3986 /* Toast.swift */; };
 		52CA5B86233AEE8C001A3986 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CA5B85233AEE8C001A3986 /* BaseViewController.swift */; };
 		52D57B6A21DBA07D00A5E2B5 /* NewsArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */; };
+		52D969E8234A98E8001A60FF /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D969E7234A98E8001A60FF /* Keys.plist */; };
 		52F5EA382334490800313854 /* SplashDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5EA372334490800313854 /* SplashDelegate.swift */; };
 		52F72B7623319BFE00FB8459 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F72B7523319BFE00FB8459 /* Observable.swift */; };
 		52F72B7823319C9500FB8459 /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F72B7723319C9500FB8459 /* RequestStatus.swift */; };
@@ -66,6 +67,7 @@
 		52CA5B83233AEDEB001A3986 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		52CA5B85233AEE8C001A3986 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52D57B6921DBA07D00A5E2B5 /* NewsArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleModel.swift; sourceTree = "<group>"; };
+		52D969E7234A98E8001A60FF /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		52F5EA372334490800313854 /* SplashDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDelegate.swift; sourceTree = "<group>"; };
 		52F72B7523319BFE00FB8459 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		52F72B7723319C9500FB8459 /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				5288077321C6962400FC4D75 /* Assets.xcassets */,
 				5288077521C6962400FC4D75 /* LaunchScreen.storyboard */,
 				5288077821C6962400FC4D75 /* Info.plist */,
+				52D969E7234A98E8001A60FF /* Keys.plist */,
 			);
 			path = "Swiping News";
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				52F7872A21D58A6B001D0438 /* NewsDetailViewController.xib in Resources */,
 				52FAAD2A233319740000BF9D /* swiping-news-logo.json in Resources */,
 				BB74257221CAB32400FDA47C /* SwipingNewsCollectionViewCell.xib in Resources */,
+				52D969E8234A98E8001A60FF /* Keys.plist in Resources */,
 				BB74256D21CA864400FDA47C /* SwipingNewsCollectionViewController.xib in Resources */,
 				5288077421C6962400FC4D75 /* Assets.xcassets in Resources */,
 			);
