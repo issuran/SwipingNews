@@ -5,7 +5,7 @@
 Swiping News will show guess what ... news :)
 
 # What is it?
-Swiping News is an app where you can swipe your news feed
+Swiping News is an app where you can swipe your top news headlines
 
 # Bugs :bug:
 - Report to me by tiago_fernandes89@hotmail.com
