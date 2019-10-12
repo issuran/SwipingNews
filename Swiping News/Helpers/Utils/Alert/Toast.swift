@@ -13,12 +13,12 @@ class Toast {
         let toastContainer = UIView(frame: CGRect())
         toastContainer.backgroundColor = UIColor.AppColors.beautifulDarkRedColor.withAlphaComponent(0.6)
         toastContainer.alpha = 0.0
-        toastContainer.layer.cornerRadius = 12;
+        toastContainer.layer.cornerRadius = 12
         toastContainer.clipsToBounds  =  true
         
         let toastLabel = UILabel(frame: CGRect())
         toastLabel.textColor = UIColor.white
-        toastLabel.textAlignment = .left;
+        toastLabel.textAlignment = .left
         toastLabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
         toastLabel.text = message
         toastLabel.clipsToBounds  =  true

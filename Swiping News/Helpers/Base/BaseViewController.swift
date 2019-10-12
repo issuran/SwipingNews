@@ -40,10 +40,10 @@ class BaseViewController: UIViewController {
         toastLabel.backgroundColor = UIColor.AppColors.beautifulDarkRedColor.withAlphaComponent(0.7)
         toastLabel.textColor = UIColor.white
         toastLabel.font = UIFont(name: "HelveticaNeue", size: 12.0)
-        toastLabel.textAlignment = .center;
+        toastLabel.textAlignment = .center
         toastLabel.text = message
         toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10;
+        toastLabel.layer.cornerRadius = 10
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
         UIView.animate(withDuration: 3.0, delay: 0.3, options: .curveLinear, animations: {
@@ -60,7 +60,6 @@ class BaseViewController: UIViewController {
         }
         
         alert.addAction(OKAction)
-        
         self.present(alert, animated: true, completion: nil)
     }
 }
