@@ -4,8 +4,6 @@
 # Swiping News
 Swiping News will show guess what ... news :)
 
-Working on..
-
 # What is it?
 Swiping News is an app where you can swipe your top news headlines
 
