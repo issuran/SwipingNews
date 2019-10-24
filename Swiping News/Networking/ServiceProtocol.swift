@@ -80,7 +80,6 @@ extension ServiceProtocol {
         } catch {
             throw error
         }
-        
         return request
     }
     
