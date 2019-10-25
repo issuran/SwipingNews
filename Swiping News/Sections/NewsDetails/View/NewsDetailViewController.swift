@@ -35,4 +35,8 @@ class NewsDetailViewController: BaseViewController {
         newsArticle.text = self.viewModel.model.brief
         sourceTextView.text = self.viewModel.model.url
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
