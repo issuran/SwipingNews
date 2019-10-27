@@ -56,9 +56,7 @@ class SwipingNewsCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         self.layer.shadowRadius = 4.0
         self.layer.shadowOpacity = 0.7
-        self.layer.masksToBounds = false
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds,
-                                             cornerRadius: self.contentView.layer.cornerRadius).cgPath
+        self.layer.masksToBounds = false        
     }
     
     func updateShimmer(_ requestStatus: RequestStatus) {

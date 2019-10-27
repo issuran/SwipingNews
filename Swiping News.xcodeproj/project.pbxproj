@@ -334,20 +334,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		52FAAD222332FF9F0000BF9D /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
 		52FAAD232332FFA60000BF9D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				52F5EA36233448F000313854 /* Protocol */,
 				52F72B802331A51900FB8459 /* SplashViewController.swift */,
 				52F72B812331A51900FB8459 /* SplashViewController.xib */,
-				52FAAD222332FF9F0000BF9D /* Animation */,
 			);
 			path = View;
 			sourceTree = "<group>";
